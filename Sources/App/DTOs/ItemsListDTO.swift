@@ -34,3 +34,10 @@ struct DeleteItemsList : Content {
 struct ListRequest: Content {
     let listId: UUID
 }
+
+//this is for test cases
+struct ItemsList : Content {
+    let itemName : String
+    let quantity : String
+    var listID: UUID
+}

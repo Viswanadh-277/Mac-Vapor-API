@@ -33,3 +33,9 @@ struct UserIdRequest: Content {
     let userId: UUID
 }
 
+//this is for test cases
+struct CreateList : Content {
+    let listName : String
+    let userID : UUID
+}
+

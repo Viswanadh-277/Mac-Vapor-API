@@ -8,7 +8,7 @@
 import Fluent
 import Vapor
 
-struct UserRegistration: Content{
+struct UserRegistration: Content {
     var firstName: String
     var lastName: String?
     var username: String
