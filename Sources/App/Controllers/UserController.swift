@@ -99,35 +99,6 @@ struct UserController: RouteCollection {
         return try await User.query(on: req.db).all()
     }
     
-    
-    // /users/verify ---> GET Request
-//    @Sendable
-//    func verifyHandler(_ req: Request) async throws -> Response {
-//        do {
-//            guard let email = req.query[String.self, at: "email"] else {
-//                throw Abort(.badRequest, reason: "Missing email")
-//            }
-//            
-//            guard let user = try await User.query(on: req.db)
-//                .filter(\.$email == email)
-//                .first() else {
-//                throw Abort(.notFound, reason: "User not found")
-//            }
-//            
-//            user.isVerified = true
-//            try await user.save(on: req.db)
-//            
-//            let successResponse = SuccessResponse(status: 1, message: "User verification successful for email: \(email)")
-//            let response = Response(status: .ok)
-//            try response.content.encode(successResponse)
-//            return response
-//        }catch let abortError as AbortError {
-//            let errorResponse = ErrorResponse(status: 0, message: abortError.reason)
-//            let response = Response(status: abortError.status)
-//            try response.content.encode(errorResponse)
-//            return response
-//        }
-//    }
     // /users/verify ---> POST Request
     @Sendable
     func verifyHandler(_ req: Request) async throws -> Response {

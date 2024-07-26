@@ -26,6 +26,8 @@ struct ItemsListController : RouteCollection {
             let createItemslist = try req.content.decode(ItemsListDTO.self)
             
             try validateField("Item Name", value: createItemslist.itemName)
+            try validateField("Quantity", value: createItemslist.quantity)
+            try validateField("ListId", value: "\(createItemslist.listID)")
             
             let itemList = ItemsListModel(itemName: createItemslist.itemName, quantity: createItemslist.quantity, listID: createItemslist.listID)
             
